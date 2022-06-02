@@ -3,7 +3,7 @@ def run():
     import subprocess
     from openpibo.oled import Oled
 
-    v = subprocess.check_output(["/boot/get_network.sh"]).decode('utf-8').strip('\n').split(',')
+    v = subprocess.check_output(["/home/pi/openpibo-files/system/get_network.sh"]).decode('utf-8').strip('\n').split(',')
     o = Oled()
     o.set_font(size=12)
     eip = v[1] if v[0] == "" else v[0]
